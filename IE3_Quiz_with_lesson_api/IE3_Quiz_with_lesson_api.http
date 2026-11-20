@@ -1,6 +1,31 @@
 @IE3_Quiz_with_lesson_api_HostAddress = http://localhost:5001
 
-GET {{IE3_Quiz_with_lesson_api_HostAddress}}/weatherforecast/
-Accept: application/json
+###
+POST {{IE3_Quiz_with_lesson_api_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "The Pragmatic Programmer",
+  "author": "Andrew Hunt",
+  "isAvailable": true,
+  "yearPublished": 1999
+}
 
 ###
+PUT {{IE3_Quiz_with_lesson_api_HostAddress}}/api/books/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "The Pragmatic Programmer (20th Anniversary)",
+  "author": "Andrew Hunt & David Thomas",
+  "isAvailable": false,
+  "yearPublished": 2019
+}
+
+###
+DELETE {{IE3_Quiz_with_lesson_api_HostAddress}}/api/books/3
+
+###
+GET {{IE3_Quiz_with_lesson_api_HostAddress}}/api/books/99
+Accept: application/json
